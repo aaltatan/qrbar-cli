@@ -1,0 +1,97 @@
+[project]
+name = "qrbar-cli"
+version = "0.1.0"
+description = "Render barcode and QR code labels (docx, ZPL, PDF) from templates and Excel or JSON data, from the command line."
+readme = "README.md"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+authors = [
+    { name = "aaltatan", email = "a.altatan@gmail.com" }
+]
+requires-python = ">=3.12"
+keywords = ["barcode", "qr", "zpl", "docx", "label", "sticker", "datamatrix", "arabic", "cli"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Printing",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+dependencies = [
+    "pyrecords>=0.2.0",
+    "pyspecification>=4.0.0",
+    "qrbar[arabic]>=0.1.1",
+    "rich>=15.0.0",
+    "schemify-cli>=0.3.0",
+    "typer>=0.27.3",
+    "typer-di>=0.1.5",
+    "typer-swissknife>=0.1.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/aaltatan/qrbar-cli"
+Repository = "https://github.com/aaltatan/qrbar-cli"
+Issues = "https://github.com/aaltatan/qrbar-cli/issues"
+
+[project.scripts]
+qrbar = "qrbar_cli:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.1",
+    "pypdf>=7.0.0",
+    "pytest>=9.2.0",
+    "ruff>=0.17.4",
+    "types-openpyxl>=3.1.5.20261017",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["--strict-markers"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "COM812",  # conflicts with the formatter
+    "CPY",     # no copyright headers
+    "D100", "D101", "D102", "D103", "D104", "D105", "D107",
+    "D203",    # conflicts with D211
+    "D213",    # conflicts with D212
+    "FBT001",  # typer flags are boolean positional parameters
+    "FBT002",
+    "PLR0913", # typer commands and dependencies take their options as parameters
+    "PLR0917",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["INP001", "PLR2004", "S101", "ANN", "ARG", "E501"]
+"docs/**" = ["INP001", "T201"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.mypy]
+strict = true
+python_version = "3.12"
+
+[[tool.mypy.overrides]]
+# these ship no type hints / no py.typed marker
+module = ["typer_swissknife", "typer_swissknife.*", "pyspecification", "pyspecification.*", "schemify", "schemify.*", "pyrecords", "pyrecords.*"]
+ignore_missing_imports = true
+follow_untyped_imports = true

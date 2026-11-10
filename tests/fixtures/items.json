@@ -1,0 +1,5 @@
+[
+  {"url": "https://example.com/1", "sku": "SKU-1", "ean": "400638133393", "name": "Lamp", "qty": 2},
+  {"url": "https://example.com/2", "sku": "SKU-2", "ean": "590123412345", "name": "Desk lamp"},
+  {"url": "https://example.com/3", "sku": "SKU-3", "ean": "012345678905", "name": "Bulb", "qty": 0}
+]

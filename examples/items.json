@@ -1,0 +1,6 @@
+[
+  {"url": "https://example.com/p/1", "sku": "LMP-001", "ean": "400638133393", "name": "Desk lamp", "name_ar": "مصباح مكتب", "category": "lighting", "qty": 3},
+  {"url": "https://example.com/p/2", "sku": "LMP-002", "ean": "590123412345", "name": "Floor lamp", "name_ar": "مصباح أرضي", "category": "lighting", "qty": 1},
+  {"url": "https://example.com/p/3", "sku": "BLB-010", "ean": "012345678905", "name": "LED bulb", "name_ar": "لمبة ليد", "category": "bulbs", "qty": 5},
+  {"url": "https://example.com/p/4", "sku": "CBL-200", "ean": "978020137962", "name": "Cable 2m", "name_ar": "كبل ٢ متر", "category": "cables", "qty": 0}
+]
