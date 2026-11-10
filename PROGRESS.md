@@ -95,7 +95,7 @@ Status values: `not started` / `in progress` / `done`.
 | 5 | Sheet checks in the CLI | `--skip` >= sheet size and `--new-page-per-record` + interleaved rejected up front (qrbar would reject them only after reading data) |
 | 6 | `--pdf` output | PDF instead of docx, never both |
 | 6 | LibreOffice message | qrbar's `soffice='...'` wording rewritten to `--soffice '...'` |
-| 7 | README image URLs | Absolute `raw.githubusercontent.com/aaltatan/qrbar-cli/main/...` (as templify) so they render on PyPI; they show only once pushed to `main` |
+| 7 | README image URLs | Relative (`docs/demo/*.gif`, `docs/images/*.png`) so they show in the editor and on GitHub before any push. PyPI does not resolve relative links: switch to absolute `raw.githubusercontent.com` URLs when publishing |
 | 7 | Progress display | Plain lines, no rich spinner: it crashed with `UnicodeEncodeError` on a cp1256 legacy Windows console |
 
 ## Notes

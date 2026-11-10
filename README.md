@@ -6,19 +6,19 @@ JSON), and get label sheets, one label per page, or ZPL ready for the printer.
 Word output can also be saved as PDF.
 
 <p>
-  <img src="https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/images/qr.png" alt="QR code" height="88">
-  <img src="https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/images/datamatrix.png" alt="Data Matrix" height="88">
-  <img src="https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/images/aztec.png" alt="Aztec" height="88">
-  <img src="https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/images/pdf417.png" alt="PDF417" height="88">
-  <img src="https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/images/code128.png" alt="Code 128" height="88">
-  <img src="https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/images/ean13.png" alt="EAN-13" height="88">
+  <img src="docs/images/qr.png" alt="QR code" height="88">
+  <img src="docs/images/datamatrix.png" alt="Data Matrix" height="88">
+  <img src="docs/images/aztec.png" alt="Aztec" height="88">
+  <img src="docs/images/pdf417.png" alt="PDF417" height="88">
+  <img src="docs/images/code128.png" alt="Code 128" height="88">
+  <img src="docs/images/ean13.png" alt="EAN-13" height="88">
 </p>
 
 ```bash
 qrbar render -t label.zpl -d items.xlsx
 ```
 
-![qrbar render: a ZPL template and an Excel sheet become Zebra labels](https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/demo/zpl.gif)
+![qrbar render: a ZPL template and an Excel sheet become Zebra labels](docs/demo/zpl.gif)
 
 - **Templates decide the look.** `{{ qr(item.url, size_mm=25) }}` in the template
   picks the code type and its printed size. The data only carries values.
@@ -112,7 +112,7 @@ Written: .../examples/sheet-labels.docx
 Written: .../examples/qr.png
 ```
 
-<img src="https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/images/sheet_preview.png" alt="A rendered A4 3x8 sheet with the first positions left empty" width="260">
+<img src="docs/images/sheet_preview.png" alt="A rendered A4 3x8 sheet with the first positions left empty" width="260">
 
 ---
 
@@ -159,7 +159,7 @@ qrbar code qr "مصباح مكتب" -o arabic-qr.png          # UTF-8, Arabic wo
 qrbar c pdf417 "LMP-001 Desk lamp" --format svg      # pdf417.svg
 ```
 
-![qrbar code and qrbar symbologies](https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/demo/code.gif)
+![qrbar code and qrbar symbologies](docs/demo/code.gif)
 
 `--scale` is PNG pixels per module (one QR square, or the thinnest bar), 4 by
 default. An SVG scales by itself.
@@ -183,13 +183,13 @@ qrbar symbologies
 
 | Code | Example | Image |
 |------|---------|-------|
-| `qr` | `https://example.com/p/1` | <img src="https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/images/qr.png" height="56"> |
-| `datamatrix` | `LMP-001` | <img src="https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/images/datamatrix.png" height="56"> |
-| `aztec` | `https://example.com/p/1` | <img src="https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/images/aztec.png" height="56"> |
-| `pdf417` | `LMP-001 Desk lamp` | <img src="https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/images/pdf417.png" height="40"> |
-| `code128` | `LMP-001` | <img src="https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/images/code128.png" height="40"> |
-| `ean13` | `400638133393` | <img src="https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/images/ean13.png" height="40"> |
-| `upca` | `03600029145` | <img src="https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/images/upca.png" height="40"> |
+| `qr` | `https://example.com/p/1` | <img src="docs/images/qr.png" height="56"> |
+| `datamatrix` | `LMP-001` | <img src="docs/images/datamatrix.png" height="56"> |
+| `aztec` | `https://example.com/p/1` | <img src="docs/images/aztec.png" height="56"> |
+| `pdf417` | `LMP-001 Desk lamp` | <img src="docs/images/pdf417.png" height="40"> |
+| `code128` | `LMP-001` | <img src="docs/images/code128.png" height="40"> |
+| `ean13` | `400638133393` | <img src="docs/images/ean13.png" height="40"> |
+| `upca` | `03600029145` | <img src="docs/images/upca.png" height="40"> |
 
 ---
 
@@ -305,7 +305,7 @@ qrbar render -t sheet.docx -d items.xlsx -m sheet --rows 8 --cols 3 --new-page-p
 qrbar render -t sheet.docx -d items.xlsx -m sheet --rows 8 --cols 3 --collate interleaved
 ```
 
-![qrbar render -m sheet, with --skip, --force and a rejected option](https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/demo/sheet.gif)
+![qrbar render -m sheet, with --skip, --force and a rejected option](docs/demo/sheet.gif)
 
 | Option | Effect |
 |--------|--------|
@@ -405,7 +405,7 @@ Item 1
 Written: .../small-labels.zpl
 ```
 
-![qrbar render -s: typing two labels in, then the ZPL they make](https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/demo/schema.gif)
+![qrbar render -s: typing two labels in, then the ZPL they make](docs/demo/schema.gif)
 
 The questions follow the schema's fields, titles and types, and the answers are
 checked against it. Option mistakes are reported **before** the first question.
@@ -433,7 +433,7 @@ qrbar render -t label.docx -d items.xlsx -m per_item -n name --numbered -o word
 qrbar render -t label.zpl -d items.json -m per_item -o rows
 ```
 
-![qrbar render -m per_item: one file per row, named by a column](https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/demo/per-item.gif)
+![qrbar render -m per_item: one file per row, named by a column](docs/demo/per-item.gif)
 
 File names:
 
@@ -464,7 +464,7 @@ normal printer font. [`examples/arabic.zpl`](examples/arabic.zpl):
 ^XZ
 ```
 
-<img src="https://raw.githubusercontent.com/aaltatan/qrbar-cli/main/docs/images/arabic_text.png" alt="Arabic text drawn for a ZPL label" height="56">
+<img src="docs/images/arabic_text.png" alt="Arabic text drawn for a ZPL label" height="56">
 
 ```bash
 qrbar render -t arabic.zpl -d items.json
