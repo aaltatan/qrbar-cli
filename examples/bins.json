@@ -1,0 +1,5 @@
+[
+  {"location": "A-01-01", "zone": "A", "aisle": 1, "qty": 2},
+  {"location": "A-01-02", "zone": "A", "aisle": 1, "qty": 2},
+  {"location": "B-04-03", "zone": "B", "aisle": 4, "qty": 2}
+]

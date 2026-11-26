@@ -33,6 +33,9 @@ qrbar render -t label.zpl -d items.xlsx
 - **Safe by default.** Existing files and the template are never overwritten
   without `--force`. Bad data is reported by row, and nothing is written.
 
+**Documentation: [aaltatan.github.io/qrbar-cli](https://aaltatan.github.io/qrbar-cli/)**:
+a step-by-step guide, real-world recipes and the full reference.
+
 Built on the [qrbar](https://github.com/aaltatan/qrbar) library. Data is read with
 [pyrecords](https://github.com/aaltatan/pyrecords), the same reader
 [templify](https://github.com/aaltatan/templify) uses.

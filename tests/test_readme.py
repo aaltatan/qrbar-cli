@@ -1,8 +1,9 @@
-"""Run every `qrbar` command in the README's bash blocks against `examples/`."""
+"""Run every `qrbar` command in the README's and docs' bash blocks against `examples/`."""
 
 import re
 import shlex
 import shutil
+import textwrap
 from pathlib import Path
 
 import pytest
@@ -12,9 +13,16 @@ from qrbar_cli.cli.app import app
 
 ROOT = Path(__file__).parent.parent
 
-BLOCKS = re.findall(
-    r"```bash\n(.*?)```", (ROOT / "README.md").read_text(encoding="utf-8"), re.DOTALL
-)
+PAGES = [ROOT / "README.md", *sorted((ROOT / "docs").rglob("*.md"))]
+
+# docs indent code blocks inside tabs and admonitions, so the fence may be indented
+BLOCKS = [
+    textwrap.dedent(block)
+    for page in PAGES
+    for _, block in re.findall(
+        r"^([ \t]*)```bash\n(.*?)^\1```", page.read_text(encoding="utf-8"), re.DOTALL | re.MULTILINE
+    )
+]
 
 
 def commands(block: str) -> list[list[str]]:

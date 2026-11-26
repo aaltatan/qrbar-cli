@@ -82,8 +82,12 @@ tests/
 - `render` takes `job` before `data`: typer-di resolves in signature order, so option
   checks fail before `--schema` asks anything. Keep that order.
 - No rich spinners / `console.status`: they crash legacy Windows consoles (cp1256).
-- README commands that need LibreOffice, a person (`--schema`) or a shell go in
-  ```text blocks; everything in ```bash blocks must run against `examples/`.
+- README and `docs/**/*.md` commands that need LibreOffice, a person (`--schema`) or a
+  shell go in ```text blocks; everything in ```bash blocks must run against `examples/`
+  (`tests/test_readme.py` runs them).
+- Docs site: MkDocs Material (`mkdocs.yml`, `docs/`), deployed to GitHub Pages by
+  `.github/workflows/docs.yml`. Preview: `uv run --group docs mkdocs serve`. A change to
+  an option or message also updates `docs/reference/`.
 
 ## Tooling
 

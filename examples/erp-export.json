@@ -1,0 +1,5 @@
+[
+  {"Item Code": "LMP-001", "Description": "Desk lamp", "Unit Price": 24.5, "Quantity": 2},
+  {"Item Code": "LMP-002", "Description": "Floor lamp", "Unit Price": 89, "Quantity": 1},
+  {"Item Code": "BLB-010", "Description": "LED bulb 9W", "Unit Price": 3.75, "Quantity": 6}
+]

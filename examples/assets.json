@@ -1,0 +1,6 @@
+[
+  {"tag": "IT-0412", "model": "Laptop 14in", "department": "Finance", "purchased": "2025-03-14"},
+  {"tag": "IT-0413", "model": "Laptop 14in", "department": "Sales", "purchased": "2025-03-14"},
+  {"tag": "IT-0517", "model": "Monitor 27in", "department": "Finance", "purchased": "2026-01-09"},
+  {"tag": "IT-0518", "model": "Docking station", "department": "IT", "purchased": "2026-01-09"}
+]

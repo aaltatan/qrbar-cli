@@ -1,0 +1,98 @@
+site_name: qrbar-cli
+site_description: Print barcode and QR code labels (Word, Zebra ZPL, PDF) from templates and Excel or JSON data.
+site_url: https://aaltatan.github.io/qrbar-cli/
+repo_url: https://github.com/aaltatan/qrbar-cli
+repo_name: aaltatan/qrbar-cli
+edit_uri: edit/main/docs/
+copyright: GPL-3.0-or-later
+
+# docs/demo holds the vhs sources of the GIFs; only the GIFs are published
+exclude_docs: |
+  demo/*.tape
+  demo/*.ps1
+
+theme:
+  name: material
+  icon:
+    logo: material/qrcode
+  favicon: images/qr.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.action.edit
+    - toc.follow
+
+nav:
+  - Home: index.md
+  - Installation: install.md
+  - User guide:
+      - guide/index.md
+      - First labels: guide/first-labels.md
+      - Zebra (ZPL) templates: guide/zpl.md
+      - Word (docx) templates: guide/word.md
+      - Label sheets: guide/sheets.md
+      - Data and quantities: guide/data.md
+      - Order and filter: guide/order-filter.md
+      - Output modes and file names: guide/output.md
+      - Arabic labels: guide/arabic.md
+      - PDF: guide/pdf.md
+      - Single codes: guide/codes.md
+  - Recipes: recipes.md
+  - Reference:
+      - reference/index.md
+      - Commands and options: reference/commands.md
+      - Template functions: reference/template-functions.md
+      - Code types: reference/symbologies.md
+      - Filter rules: reference/filter-rules.md
+      - Errors and exit codes: reference/errors.md
+  - Development: development.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.keys
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/aaltatan/qrbar-cli
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/qrbar-cli/

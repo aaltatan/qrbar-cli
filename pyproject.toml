@@ -38,6 +38,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/aaltatan/qrbar-cli"
+Documentation = "https://aaltatan.github.io/qrbar-cli/"
 Repository = "https://github.com/aaltatan/qrbar-cli"
 Issues = "https://github.com/aaltatan/qrbar-cli/issues"
 
@@ -55,6 +56,9 @@ dev = [
     "pytest>=9.2.0",
     "ruff>=0.17.4",
     "types-openpyxl>=3.1.5.20261017",
+]
+docs = [
+    "mkdocs-material>=9.8.2",
 ]
 
 [tool.pytest.ini_options]
